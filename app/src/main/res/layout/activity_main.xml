@@ -16,34 +16,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="226dp"
-            app:srcCompat="@mipmap/lapaz" />
-
-        <EditText
-            android:id="@+id/usuario"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:ems="10"
-            android:hint="Usuario"
-            android:inputType="textPersonName"
-            tools:layout_editor_absoluteX="81dp"
-            tools:layout_editor_absoluteY="232dp" />
+            android:text="Bienvenido, Supervisor"
+            android:textSize="54dp"
+            android:gravity="center"
+            android:textColor="#000000"/>
 
-        <EditText
-            android:id="@+id/contrasena"
-            android:layout_width="match_parent"
+        <ImageButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:ems="10"
-            android:hint="Contraseña"
-            android:inputType="textPassword"
-            tools:layout_editor_absoluteX="81dp"
-            tools:layout_editor_absoluteY="232dp" />
-
+            android:src="drawable/registroicono"/>
         <Button
             android:id="@+id/ingresar"
             android:layout_width="match_parent"
