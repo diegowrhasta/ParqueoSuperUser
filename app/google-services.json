@@ -1,0 +1,198 @@
+{
+  "project_info": {
+    "project_number": "54996546396",
+    "firebase_url": "https://parquealcaldiaobrajes.firebaseio.com",
+    "project_id": "parquealcaldiaobrajes",
+    "storage_bucket": "parquealcaldiaobrajes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:54996546396:android:f80f676fa646c95a",
+        "android_client_info": {
+          "package_name": "com.asd.asd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "54996546396-nq51qhm3k2g5ppm31nts1ofj1ep4sqel.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXWn69aDcItEw-dJZe0dK3zbEN9tC0HsI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:54996546396:android:0b9ab5765cd44900",
+        "android_client_info": {
+          "package_name": "com.example.diego.parquealcaldiaobrajes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "54996546396-mk9g6a4hnt5ai9lrntj7gme7kjqk16d5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.diego.parquealcaldiaobrajes",
+            "certificate_hash": "180ed94a529de4ec19cb988349eb02fb5f615b27"
+          }
+        },
+        {
+          "client_id": "54996546396-tgcp4s34ls3m0qg34o5tdvsqslapo23d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.diego.parquealcaldiaobrajes",
+            "certificate_hash": "8c622d36c81f22d1515d1641ba2efadc051765c8"
+          }
+        },
+        {
+          "client_id": "54996546396-nq51qhm3k2g5ppm31nts1ofj1ep4sqel.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXWn69aDcItEw-dJZe0dK3zbEN9tC0HsI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "54996546396-nq51qhm3k2g5ppm31nts1ofj1ep4sqel.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:54996546396:android:936d05249795a516",
+        "android_client_info": {
+          "package_name": "com.example.diego.parqueosuperuser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "54996546396-lilbdsj78b9s587j9muovptdidva2bqs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.diego.parqueosuperuser",
+            "certificate_hash": "f353891d5ebfe2302d29906c67e056188bfad2aa"
+          }
+        },
+        {
+          "client_id": "54996546396-nq51qhm3k2g5ppm31nts1ofj1ep4sqel.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXWn69aDcItEw-dJZe0dK3zbEN9tC0HsI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "54996546396-nq51qhm3k2g5ppm31nts1ofj1ep4sqel.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:54996546396:android:dcedbdc2b60e24c7",
+        "android_client_info": {
+          "package_name": "com.example.mateo.obrajescliente"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "54996546396-80bptfe3s8q2qvm5eju58hmafgql4v6f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mateo.obrajescliente",
+            "certificate_hash": "8c622d36c81f22d1515d1641ba2efadc051765c8"
+          }
+        },
+        {
+          "client_id": "54996546396-gj3hfs91vv22rot17ea23ainnmv6fi6b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mateo.obrajescliente",
+            "certificate_hash": "180ed94a529de4ec19cb988349eb02fb5f615b27"
+          }
+        },
+        {
+          "client_id": "54996546396-rgrfgusv3ov6moiiduoitqlsasm6upe4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mateo.obrajescliente",
+            "certificate_hash": "e24ef751180dece83f250549486ee28ef36052b2"
+          }
+        },
+        {
+          "client_id": "54996546396-nq51qhm3k2g5ppm31nts1ofj1ep4sqel.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXWn69aDcItEw-dJZe0dK3zbEN9tC0HsI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "54996546396-nq51qhm3k2g5ppm31nts1ofj1ep4sqel.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
