@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".PantallaRegistroEncargados" />
+        <activity android:name=".ActivityReportesCalles" />
+        <activity android:name=".ActivityAsignacionCalles" />
+        <activity android:name=".ActivityListaEncargados"></activity>
     </application>
 
 </manifest>

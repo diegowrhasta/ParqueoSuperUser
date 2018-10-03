@@ -9,8 +9,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,29 +20,95 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Bienvenido, Supervisor"
-            android:textSize="54dp"
+            android:textSize="48dp"
             android:gravity="center"
             android:textColor="#000000"/>
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="drawable/registroicono"/>
-        <Button
-            android:id="@+id/ingresar"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:layout_marginEnd="80dp"
-            android:layout_marginRight="76dp"
-            android:background="@android:color/holo_green_light"
-            android:text="Ingresar"
-            android:textColor="@android:color/background_light"
-            android:textStyle="bold"
+            android:orientation="horizontal"
+            android:gravity="center">
 
-            tools:layout_editor_absoluteY="393dp" />
-
-
+            <ImageButton
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:id="@+id/botonregistro"
+                android:background="@drawable/registroicono"
+                android:onClick="registro_encargado"
+                android:layout_weight="0.5"/>
+            <ImageButton
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:id="@+id/botonreporte"
+                android:background="@drawable/reportesicono"
+                android:onClick="inicio_reportes"
+                android:layout_weight="0.5"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registro"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="24dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reportes"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="24dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="50dp"
+            android:gravity="center">
+            <ImageButton
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:id="@+id/botoncalles"
+                android:background="@drawable/callesicono"
+                android:onClick="inicio_calles"
+                android:layout_weight="0.5"/>
+            <ImageButton
+                android:id="@+id/botonencargados"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:background="@drawable/encargadosicono"
+                android:onClick="lista_encargados"
+                android:layout_weight="0.5"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Calles"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="24dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Encargados"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="24dp"/>
+        </LinearLayout>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
