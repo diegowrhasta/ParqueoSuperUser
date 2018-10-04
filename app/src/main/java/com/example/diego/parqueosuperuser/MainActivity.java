@@ -13,20 +13,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void registro_encargado(View view) {
+    public void registro_encargado(View view) { //Lanza la actividad para registro
         startActivity(new Intent(getApplicationContext(), PantallaRegistroEncargados.class));
     }
 
-    public void inicio_reportes(View view) {
+    public void inicio_reportes(View view) { //Lanza la actividad para reportes
         startActivity(new Intent(getApplicationContext(), ActivityReportesCalles.class));
     }
 
-    public void inicio_calles(View view) {
+    public void inicio_calles(View view) { //Lanza la actividad para ver las calles
         startActivity(new Intent(getApplicationContext(), ActivityAsignacionCalles.class));
     }
 
 
-    public void lista_encargados(View view) {
+    public void lista_encargados(View view) { //Lanza la actividad para revisar el listado de encargados
         startActivity(new Intent(getApplicationContext(), ActivityListaEncargados.class));
     }
 }
