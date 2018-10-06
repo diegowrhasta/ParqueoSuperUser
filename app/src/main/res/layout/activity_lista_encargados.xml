@@ -5,5 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ActivityListaEncargados">
+    <RelativeLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/calle"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/ic_perfil" />
+
+
+        <TextView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/ic_en" />
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

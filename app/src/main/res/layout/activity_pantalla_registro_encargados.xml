@@ -5,46 +5,99 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PantallaRegistroEncargados">
+
+    <RelativeLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/calle"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/ic_perfil" />
+
+        <TextView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/ic_reg"
+            android:layout_alignParentRight="true"
+            />
+
+
+    </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="514dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="48dp"
+            android:gravity="center"
             android:text="Registro"
-            android:gravity="center"/>
-        <EditText
+            android:textSize="48dp" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre"
-            android:id="@+id/nombreEt"
-            android:inputType="text" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/fechaEt"
-            android:hint="Fecha de Nacimiento"
-            android:inputType="date" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/carnetEt"
-            android:hint="Carnet"
-            android:inputType="text" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/telfEt"
-            android:hint="Teléfono"
-            android:inputType="number" />
+            android:layout_gravity="center"
+            android:layout_margin="40dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/nombreEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:hint="Nombre"
+                android:inputType="text"
+                android:theme="@style/MyEditTextStyle2" />
+
+            <EditText
+                android:id="@+id/fechaEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:hint="Fecha de Nacimiento"
+                android:inputType="date"
+                android:theme="@style/MyEditTextStyle2" />
+
+            <EditText
+                android:id="@+id/carnetEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:hint="Carnet"
+                android:inputType="text"
+                android:theme="@style/MyEditTextStyle2" />
+
+            <EditText
+                android:id="@+id/telfEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:hint="Teléfono"
+                android:inputType="number"
+                android:theme="@style/MyEditTextStyle2" />
+
+        </LinearLayout>
+
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/boton_rojo"
             android:onClick="registrar_encargado"
-            android:text="Registrar"/>
+            android:paddingHorizontal="15dp"
+            android:text="Registrar"
+            android:textColor="@color/white" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

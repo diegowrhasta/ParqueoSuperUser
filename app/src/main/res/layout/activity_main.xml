@@ -5,110 +5,139 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/colorPrimary">
+    android:background="@color/white">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <RelativeLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
+        <TextView
+            android:id="@+id/calle"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/ic_perfil"
+            />
+
+
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:adjustViewBounds="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/alcaldia"
+            android:baselineAligned="false"
+            android:cropToPadding="true" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="486dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.0">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Bienvenido, Supervisor"
-            android:textSize="48dp"
+            android:layout_marginBottom="10dp"
             android:gravity="center"
-            android:textColor="#000000"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
+            android:text="Bienvenido, Supervisor"
+            android:textColor="#000000"
+            android:textSize="48dp" />
 
-            <ImageButton
-                android:layout_width="128dp"
-                android:layout_height="128dp"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
                 android:id="@+id/botonregistro"
-                android:background="@drawable/registroicono"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="20dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/boton_menu"
+                android:drawableTop="@drawable/ic_reg"
                 android:onClick="registro_encargado"
-                android:layout_weight="0.5"/>
-            <ImageButton
-                android:layout_width="128dp"
-                android:layout_height="128dp"
-                android:id="@+id/botonreporte"
-                android:background="@drawable/reportesicono"
-                android:onClick="inicio_reportes"
-                android:layout_weight="0.5"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
                 android:text="Registro"
-                android:layout_weight="0.5"
-                android:gravity="center"
-                android:textColor="#000000"
-                android:textSize="24dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Reportes"
-                android:layout_weight="0.5"
-                android:gravity="center"
-                android:textColor="#000000"
-                android:textSize="24dp"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="50dp"
-            android:gravity="center">
-            <ImageButton
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/botonreporte"
                 android:layout_width="128dp"
                 android:layout_height="128dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="20dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/boton_menu"
+                android:drawableTop="@drawable/ic_reporte"
+                android:onClick="inicio_reportes"
+                android:paddingTop="25dp"
+                android:text="Reportes"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
+
+            <Button
                 android:id="@+id/botoncalles"
-                android:background="@drawable/callesicono"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="20dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/boton_menu"
+                android:drawableTop="@drawable/ic_calles"
                 android:onClick="inicio_calles"
-                android:layout_weight="0.5"/>
-            <ImageButton
+                android:paddingTop="25dp"
+                android:text="Calles"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <Button
                 android:id="@+id/botonencargados"
                 android:layout_width="128dp"
                 android:layout_height="128dp"
-                android:background="@drawable/encargadosicono"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="20dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/boton_menu"
+                android:drawableTop="@drawable/ic_en"
                 android:onClick="lista_encargados"
-                android:layout_weight="0.5"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Calles"
-                android:layout_weight="0.5"
-                android:gravity="center"
-                android:textColor="#000000"
-                android:textSize="24dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
                 android:text="Encargados"
-                android:layout_weight="0.5"
-                android:gravity="center"
-                android:textColor="#000000"
-                android:textSize="24dp"/>
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
         </LinearLayout>
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
