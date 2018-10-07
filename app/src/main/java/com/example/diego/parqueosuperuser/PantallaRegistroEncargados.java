@@ -1,6 +1,7 @@
 package com.example.diego.parqueosuperuser;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -61,7 +62,13 @@ public class PantallaRegistroEncargados extends AppCompatActivity {
             myRef.child(carnet).child("nombre").setValue(nombre);
             myRef.child(carnet).child("fecha_nac").setValue(fecha_nac);
             myRef.child(carnet).child("telefono").setValue(telefono);
+            myRef.child(carnet).child("calle_activa").setValue("0");
         }
+        Toast.makeText(this, "Encargado Agregado con éxito", Toast.LENGTH_SHORT).show();
+        nombreEt.setText("");
+        fechaEt.setText("");
+        carnetEt.setText("");
+        telefonoEt.setText("");
     }
 
 }
