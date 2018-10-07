@@ -36,13 +36,13 @@ public class PantallaRegistroEncargados extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
 
     }
-    /*Funcion que se activa cuando se anuncia el  */
+    /*Funcion que se activa cuando se acciona el boton de resgistrar  */
     public void registrar_encargado(View view) {
         String nombre = nombreEt.getText().toString().trim();
         String fecha_nac = fechaEt.getText().toString().trim();
         String carnet = carnetEt.getText().toString().trim();
         String telefono = telefonoEt.getText().toString().trim();
-        /*Verificacion de los campos que esten llenos, si no estan llenos pinta de rojo el campao especifico, si todos los ifs son falsos lleva a registrar */
+        /*Verificacion de los campos que esten llenos, si no estan llenos pinta de rojo el campo especifico, si todos los ifs son falsos lleva a registrar */
         if (TextUtils.isEmpty(nombre)) {
             nombreEt.setHintTextColor(getResources().getColor(R.color.colorAccent));
         }
@@ -62,9 +62,10 @@ public class PantallaRegistroEncargados extends AppCompatActivity {
             myRef.child(carnet).child("nombre").setValue(nombre);
             myRef.child(carnet).child("fecha_nac").setValue(fecha_nac);
             myRef.child(carnet).child("telefono").setValue(telefono);
-            myRef.child(carnet).child("calle_activa").setValue("0");
+            myRef.child(carnet).child("calle_activa").setValue("0"); //Por defecto los encargados tendrán una calle 0 asignada para expresar que no están asignados a ninguna calle
         }
         Toast.makeText(this, "Encargado Agregado con éxito", Toast.LENGTH_SHORT).show();
+        // Reset de los campos una vez registrado el encargado
         nombreEt.setText("");
         fechaEt.setText("");
         carnetEt.setText("");

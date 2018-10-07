@@ -1,6 +1,6 @@
 package com.example.diego.parqueosuperuser;
-
-public class Encargado {
+// Esta es una clase adaptador, para vaciar todos los valores de firebase y luego poder manipularlos
+public class Encargado { //Todos estos atributos son los registrados en Firebase, vale recalcar que son Case Sensitive, hay que respetar minúscula de mayúscula para trabajarlos de buena manera
     private String calle_activa;
     private String fecha_nac;
     private String nombre;
@@ -38,6 +38,8 @@ public class Encargado {
         this.telefono = telefono;
     }
 
+    public Encargado() { /*Se requiere de un constructor vacío por sintaxis, de no tenerlo la aplicación hará crash*/
+    }
     public Encargado(String calle_activa, String fecha_nac, String nombre, String telefono) {
         this.calle_activa = calle_activa;
         this.fecha_nac = fecha_nac;
