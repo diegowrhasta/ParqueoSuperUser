@@ -1,8 +1,6 @@
 package com.example.diego.parqueosuperuser;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -62,7 +60,8 @@ public class PantallaRegistroEncargados extends AppCompatActivity {
             myRef.child(carnet).child("nombre").setValue(nombre);
             myRef.child(carnet).child("fecha_nac").setValue(fecha_nac);
             myRef.child(carnet).child("telefono").setValue(telefono);
-            myRef.child(carnet).child("calle_activa").setValue("0"); //Por defecto los encargados tendrán una calle 0 asignada para expresar que no están asignados a ninguna calle
+            myRef.child(carnet).child("calle_activa").setValue("0");
+            myRef.child(carnet).child("password").setValue(carnet+"");//Por defecto los encargados tendrán una calle 0 asignada para expresar que no están asignados a ninguna calle
         }
         Toast.makeText(this, "Encargado Agregado con éxito", Toast.LENGTH_SHORT).show();
         // Reset de los campos una vez registrado el encargado
