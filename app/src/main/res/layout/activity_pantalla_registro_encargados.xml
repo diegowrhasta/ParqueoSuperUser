@@ -78,6 +78,8 @@
                 android:inputType="text"
                 android:theme="@style/MyEditTextStyle2" />
 
+
+
             <EditText
                 android:id="@+id/telfEt"
                 android:layout_width="match_parent"
@@ -86,6 +88,15 @@
                 android:hint="Teléfono"
                 android:inputType="number"
                 android:theme="@style/MyEditTextStyle2" />
+            <EditText
+                android:id="@+id/correo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:hint="Correo"
+                android:inputType="textEmailAddress"
+                android:theme="@style/MyEditTextStyle2" />
+
 
         </LinearLayout>
 
