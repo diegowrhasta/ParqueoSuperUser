@@ -137,7 +137,22 @@
                 app:layout_constraintTop_toBottomOf="@+id/c5"
                 android:background="@drawable/boton_calle"
                 />
-
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="16:46"
+                android:id="@+id/tiempoinicio"
+                android:textSize="24dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mostrarestado"
+                android:textSize="24dp"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="set_reserva"
+                android:text="Hacer Reserva"/>
         </LinearLayout>
     </ScrollView>
 
