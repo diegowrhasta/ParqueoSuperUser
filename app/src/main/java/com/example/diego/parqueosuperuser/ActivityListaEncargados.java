@@ -56,7 +56,8 @@ public class ActivityListaEncargados extends AppCompatActivity {
         super.onStart();
         adapter.startListening();
     }
-
+    //List changes okay
+    //Check
     @Override
     protected void onStop() {
         super.onStop();
