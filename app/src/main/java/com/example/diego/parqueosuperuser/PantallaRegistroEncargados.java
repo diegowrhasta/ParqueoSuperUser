@@ -19,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class PantallaRegistroEncargados extends AppCompatActivity {
 
-    private EditText telefonoEt, nombreEt, fechaEt, carnetEt, correo; // Variables para instanciar los Edit Texts de la actividad
+    private EditText telefonoEt, nombreEt, fechaEt, carnetEt, correo,contrasena; // Variables para instanciar los Edit Texts de la actividad
 
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase BaseFire;
@@ -37,6 +37,7 @@ public class PantallaRegistroEncargados extends AppCompatActivity {
         fechaEt = (EditText) findViewById(R.id.fechaEt);
         carnetEt = (EditText) findViewById(R.id.carnetEt);
         correo= (EditText) findViewById(R.id.correo);
+        contrasena= (EditText) findViewById(R.id.contrasena);
         progressDialog = new ProgressDialog(this);
         firebaseAuth = FirebaseAuth.getInstance();
     }
@@ -47,7 +48,9 @@ public class PantallaRegistroEncargados extends AppCompatActivity {
         final String carnet = carnetEt.getText().toString().trim();
         final String telefono = telefonoEt.getText().toString().trim();
         final String email=correo.getText().toString().trim();
-        if(TextUtils.isEmpty(email)||TextUtils.isEmpty(nombre)||TextUtils.isEmpty(telefono)||TextUtils.isEmpty(carnet)||TextUtils.isEmpty(fecha_nac)||TextUtils.isEmpty(nombre)){
+        final String password=contrasena.getText().toString().trim();
+
+        if(TextUtils.isEmpty(email)||TextUtils.isEmpty(nombre)||TextUtils.isEmpty(password)||TextUtils.isEmpty(carnet)||TextUtils.isEmpty(fecha_nac)||TextUtils.isEmpty(nombre)){
             Toast.makeText(this,"Ingrese todos los datos",Toast.LENGTH_LONG).show();
             return;
         }
@@ -70,7 +73,7 @@ public class PantallaRegistroEncargados extends AppCompatActivity {
         }
         /*Toma los strings obtenidos de los Edit Text y luego los coloca acorde a la estructura del objeto, el carnet servira como Key */
         else {
-            firebaseAuth.createUserWithEmailAndPassword(email, carnet)
+            firebaseAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -78,13 +81,15 @@ public class PantallaRegistroEncargados extends AppCompatActivity {
                             if(task.isSuccessful()){
 
 
-                                myRef = FirebaseDatabase.getInstance().getReference("Encargado");
-                                myRef.child(firebaseAuth.getUid()).child("nombre").setValue(nombre);
-                                myRef.child(firebaseAuth.getUid()).child("fecha_nac").setValue(fecha_nac);
-                                myRef.child(firebaseAuth.getUid()).child("telefono").setValue(telefono);
-                                myRef.child(firebaseAuth.getUid()).child("calle_activa").setValue("0");
-                                myRef.child(firebaseAuth.getUid()).child("password").setValue(carnet+"");//Por defecto los encargados tendrán una calle 0 asignada para expresar que no están asignados a ninguna calle
-                                myRef.child(firebaseAuth.getUid()).child("correo").setValue(email);
+                                myRef = FirebaseDatabase.getInstance().getReference("Cliente").child(firebaseAuth.getUid()).child("Usuario");
+                                myRef.child("nombre").setValue(nombre);
+                                myRef.child("fecha_nac").setValue(fecha_nac);
+                                myRef.child("telefono").setValue(telefono);
+                                myRef.child("calle_activa").setValue("0");
+                                myRef.child("carnet").setValue(carnet+"");//Por defecto los encargados tendrán una calle 0 asignada para expresar que no están asignados a ninguna calle
+                                myRef.child("correo").setValue(email);
+                                myRef.child("password").setValue(password);
+                                myRef.child("tipo").setValue("UsuarioEncargado");
                                 //se ingresan firebaseAuth.getUid() datos del usuario en la base
 
                             }else{
@@ -103,6 +108,7 @@ public class PantallaRegistroEncargados extends AppCompatActivity {
         carnetEt.setText("");
         telefonoEt.setText("");
         correo.setText("");
+        contrasena.setText("");
     }
 
 }
