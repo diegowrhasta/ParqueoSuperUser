@@ -23,7 +23,7 @@ public class PantallaRegistroEncargados extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase BaseFire;
-    private DatabaseReference myRef;
+    private DatabaseReference myRef,otroBDD;
     //Para mostrar el gif de progreso instanciar
     private ProgressDialog progressDialog;
 
@@ -90,6 +90,16 @@ public class PantallaRegistroEncargados extends AppCompatActivity {
                                 myRef.child("correo").setValue(email);
                                 myRef.child("password").setValue(password);
                                 myRef.child("tipo").setValue("UsuarioEncargado");
+
+                                otroBDD = FirebaseDatabase.getInstance().getReference("Encargado").child(firebaseAuth.getUid());
+                                otroBDD.child("nombre").setValue(nombre);
+                                otroBDD.child("fecha_nac").setValue(fecha_nac);
+                                otroBDD.child("telefono").setValue(telefono);
+                                otroBDD.child("calle_activa").setValue("0");
+                                otroBDD.child("carnet").setValue(carnet+"");//Por defecto los encargados tendrán una calle 0 asignada para expresar que no están asignados a ninguna calle
+                                otroBDD.child("correo").setValue(email);
+
+
                                 //se ingresan firebaseAuth.getUid() datos del usuario en la base
 
                             }else{

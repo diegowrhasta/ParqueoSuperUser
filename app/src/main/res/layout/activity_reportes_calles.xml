@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="56dp"
-            android:text="Reportes"
+            android:text="Reporte"
             android:layout_centerInParent="true"
             android:textSize="35dp"
             android:textColor="#000"
@@ -59,7 +59,7 @@
                 android:id="@+id/fecha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Escoge una fecha"
+                android:text="Estado actual"
                 android:textColor="#444444"
                 android:textSize="26dp" />
 
@@ -72,7 +72,7 @@
 
         </LinearLayout>
 
-        <Button
+       <!-- <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/boton_rojo"
@@ -83,5 +83,15 @@
             android:paddingHorizontal="15dp"
             android:layout_margin="5dp"
             />
+           -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/listview">
+            </ListView>
+        </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
