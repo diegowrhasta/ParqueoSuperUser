@@ -2,48 +2,65 @@ package com.example.diego.parqueosuperuser;
 // Esta es una clase adaptador, para vaciar todos los valores de firebase y luego poder manipularlos
 public class Encargado { //Todos estos atributos son los registrados en Firebase, vale recalcar que son Case Sensitive, hay que respetar minúscula de mayúscula para trabajarlos de buena manera
     private String calle_activa;
-    private String fecha_nac;
+    private String carnet;
+    private String correo;
+    private String id;
     private String nombre;
+    private String password;
+    private String sector;
     private String telefono;
+    private String tipo;
+
+
+
+    public Encargado() { /*Se requiere de un constructor vacío por sintaxis, de no tenerlo la aplicación hará crash*/
+    }
+
+    public Encargado(String calle_activa, String carnet, String correo, String id, String nombre, String password, String sector, String telefono, String tipo) {
+        this.calle_activa = calle_activa;
+        this.carnet = carnet;
+        this.correo = correo;
+        this.id = id;
+        this.nombre = nombre;
+        this.password = password;
+        this.sector = sector;
+        this.telefono = telefono;
+        this.tipo = tipo;
+    }
 
     public String getCalle_activa() {
         return calle_activa;
     }
 
-    public void setCalle_activa(String calle_activa) {
-        this.calle_activa = calle_activa;
+    public String getCarnet() {
+        return carnet;
     }
 
-    public String getFecha_nac() {
-        return fecha_nac;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setFecha_nac(String fecha_nac) {
-        this.fecha_nac = fecha_nac;
+    public String getId() {
+        return id;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public String getPassword() {
+        return password;
+    }
+
+    public String getSector() {
+        return sector;
     }
 
     public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public Encargado() { /*Se requiere de un constructor vacío por sintaxis, de no tenerlo la aplicación hará crash*/
-    }
-    public Encargado(String calle_activa, String fecha_nac, String nombre, String telefono) {
-        this.calle_activa = calle_activa;
-        this.fecha_nac = fecha_nac;
-        this.nombre = nombre;
-        this.telefono = telefono;
+    public String getTipo() {
+        return tipo;
     }
 }

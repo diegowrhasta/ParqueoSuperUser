@@ -1,66 +1,124 @@
 package com.example.diego.parqueosuperuser;
 
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.firebase.ui.database.FirebaseListAdapter;
-import com.firebase.ui.database.FirebaseListOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
-
-
-import java.util.List;
+import java.util.ArrayList;
 /*Cambiando el SDK y demás settings como el support del Project Graddle y de la App Gradle, para que Firebase 4.2.0 pueda trabajar en versiones recomendadas compatibles se elabora
 * este programa: */
 
-public class ActivityListaEncargados extends AppCompatActivity {
-    ListView listaEncargados;
-    FirebaseListAdapter adapter;
+public class ActivityListaEncargados extends AppCompatActivity implements SearchView.OnQueryTextListener,ListView.OnClickListener {
+    ListView list;
+    DatabaseReference ArtistasBBD;
+    ListView Verlista1;
+
+    private FirebaseAuth firebaseAuth;
+    //List<UserInformation> artistList;
+    ArrayList<Encargado> artistList = new ArrayList<Encargado>();
+
+
+    ListaArtista adapter;  //algo asi creo
+    SearchView editsearch;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_encargados);
-        listaEncargados = (ListView) findViewById(R.id.listview);
-        Query query = FirebaseDatabase.getInstance().getReference().child("Encargado"); //Se hace un pequeño Query a la base de datos para poner un puntero en el objeto de encargados
-        FirebaseListOptions<Encargado> options = new FirebaseListOptions.Builder<Encargado>() //Este parámetro es el que nutre al Adaptador de Firebase para colocar los valores del Query
-                .setLayout(R.layout.encargado)
-                .setQuery(query,Encargado.class)
-                .build();
-        adapter = new FirebaseListAdapter(options) { //El adaptador de Firebase para aplicarlo al item personalizado que hicimos: encargado.xml para los items del el listview en ListaEncargados
-            @Override
-            protected void populateView(@NonNull View v, @NonNull Object model, int position) { //Esta funcion comienza a llenar los cambos del list view
-                TextView calle_activa = v.findViewById(R.id.calle_activa); /*Primero asigna los objectos con sus identificadores de encargado.xml */
-                TextView fecha_nac = v.findViewById(R.id.fecha_nac);;
-                TextView nombre = v.findViewById(R.id.nombre);;
-                TextView telefono = v.findViewById(R.id.telefono);;
 
-                Encargado enc = (Encargado) model; //El modelo es el cual se obtiene desde Firebase; del objeto: Con sus atributos, acá es donde entra la parte de case sensitive, si los nombres
-                // de la clase local y los nombres en firebase difieren surgirá un error.
-                calle_activa.setText("Calle Activa: "+enc.getCalle_activa().toString()); /*Todos los valores los estamos manejando como Strings para facilitar el uso */
-                nombre.setText("Nombre: "+enc.getNombre().toString());
-                fecha_nac.setText("Fecha de Nacimiento: "+enc.getFecha_nac().toString());
-                telefono.setText("Teléfono: "+enc.getTelefono().toString());
-            }
-        };
-        listaEncargados.setAdapter(adapter); /*Una vez todos los valores se obtienen se lo aplican al listview que tenemos en la actividad */
+        ArtistasBBD= FirebaseDatabase.getInstance().getReference("Encargado");
+
+
+
+        Verlista1=(ListView) findViewById(R.id.listview); //nombre de donde se muestra
+
+
+
     }
 
     @Override
-    protected void onStart() { /*Metodos necesarios para que la funcion populateView pueda ser llamada y corra el llenado estando en la actividad, y cuando se salga pare con la función de igual manera*/
+    protected void onStart() {
         super.onStart();
-        adapter.startListening();
+
+        ArtistasBBD.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                artistList.clear();
+                for (DataSnapshot artistSnapshot: dataSnapshot.getChildren()){
+                    Encargado artist= artistSnapshot.getValue(Encargado.class);
+                    artistList.add(artist);
+                }
+
+                adapter=new ListaArtista(ActivityListaEncargados.this, artistList);
+                Verlista1.setAdapter(adapter);
+
+
+                editsearch = (SearchView) findViewById(R.id.search);
+                editsearch.setOnQueryTextListener(ActivityListaEncargados.this);
+
+                Verlista1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                                     @Override
+                                                     public void onItemClick (AdapterView < ? > adapter, View view,int position, long arg){
+                                                         // TODO Auto-generated method stub
+                                                         TextView v = (TextView) view.findViewById(R.id.nombre);
+                                                         Toast.makeText(getApplicationContext(), "" + v.getText(), Toast.LENGTH_LONG).show();
+                                                         Intent intent = new Intent(getApplicationContext(),ActualizarCalleEncargado.class);
+                                                         Encargado selectedProduct = artistList.get(position);
+
+                                                         // Poner el Id de la imagen como extra en la intención
+                                                         intent.putExtra("nombre",selectedProduct.getNombre());
+                                                         intent.putExtra("sector",selectedProduct.getSector());
+                                                         intent.putExtra("calle_actual", selectedProduct.getCalle_activa());
+                                                         intent.putExtra("id", selectedProduct.getId());
+
+
+                                                         startActivity(intent);
+
+                                                         // Aquí pasaremos el parámetro de la intención creada previamente
+
+                                                     }
+                                                 }
+                );
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+
+            }
+        });
     }
-    //List changes okay
-    //Check
+
+
     @Override
-    protected void onStop() {
-        super.onStop();
-        adapter.stopListening();
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        String text = newText;
+        adapter.filter(text);         //falta
+        return false;
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

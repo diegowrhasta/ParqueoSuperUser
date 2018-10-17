@@ -1,20 +1,12 @@
 package com.example.diego.parqueosuperuser;
 
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.firebase.ui.database.FirebaseListOptions;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -40,7 +32,7 @@ public class ActivityAsignacionCalles extends AppCompatActivity {
         /*Obtener la hora local */
         //Evento que corre una sola vez para consultar a FireBase algo, la idea es que se aplique esto en el evento de onDataChange del mapa que los encargados estarán viendo, y cuando se
         //haga una reserva osea _Cambie el estado de un nodo_ corra toda esta rutina para establecer un timer que le quite el estado de reservado si las condiciones se cumplen.
-        try{
+      /*  try{
             Query query = FirebaseDatabase.getInstance().getReference().child("hora").child("1"); //Se hace un pequeño Query a la base de datos para poner un puntero en el objeto de encargados
             query.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
@@ -63,10 +55,10 @@ public class ActivityAsignacionCalles extends AppCompatActivity {
             Log.e("Error",e.getMessage()+"");
         }
         //
+*/
 
 
-
-    }
+    }/*
     private void hacerTimer(String actual) //Función para hacer correr un timer que expira en 3 segundos y hace un cambio automatico en firebase
     {
         String[] parts = actual.split(":");
@@ -95,6 +87,6 @@ public class ActivityAsignacionCalles extends AppCompatActivity {
         String id = "1";
         databasePruebaHora = FirebaseDatabase.getInstance().getReference("hora");
         databasePruebaHora.child(id).setValue(hora);
-    }
+    }*/
 
 }

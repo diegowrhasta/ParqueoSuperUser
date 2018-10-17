@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActualizarCalleEncargado">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/fotito"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/ic_perfil" />
+
+
+            <TextView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/ic_en" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="cargando..."
+            android:textAllCaps="true"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/calleactual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="calle"
+            android:textAllCaps="true"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            android:textAlignment="center"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/actualestado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="estado"
+            android:textAllCaps="true"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            android:textAlignment="center"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+        <EditText
+            android:id="@+id/calle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Calle"
+            android:inputType="textPersonName" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+        <EditText
+            android:id="@+id/sector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Sector"
+            android:inputType="textPersonName" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="registroNew"
+            android:text="Registrar"
+            android:textColor="@color/fui_bgGoogle"
+            android:textStyle="bold"
+            android:background="@color/colorPrimary"/>
+
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

@@ -90,6 +90,8 @@ public class PantallaRegistroEncargados extends AppCompatActivity {
                                 myRef.child("correo").setValue(email);
                                 myRef.child("password").setValue(password);
                                 myRef.child("tipo").setValue("UsuarioEncargado");
+                                myRef.child("sector").setValue("0");
+                                myRef.child("id").setValue(firebaseAuth.getUid());
 
                                 otroBDD = FirebaseDatabase.getInstance().getReference("Encargado").child(firebaseAuth.getUid());
                                 otroBDD.child("nombre").setValue(nombre);
@@ -98,6 +100,8 @@ public class PantallaRegistroEncargados extends AppCompatActivity {
                                 otroBDD.child("calle_activa").setValue("0");
                                 otroBDD.child("carnet").setValue(carnet+"");//Por defecto los encargados tendrán una calle 0 asignada para expresar que no están asignados a ninguna calle
                                 otroBDD.child("correo").setValue(email);
+                                otroBDD.child("sector").setValue("0");
+                                otroBDD.child("id").setValue(firebaseAuth.getUid());
 
 
                                 //se ingresan firebaseAuth.getUid() datos del usuario en la base
