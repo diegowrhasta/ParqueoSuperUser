@@ -1,6 +1,8 @@
 package com.example.diego.parqueosuperuser;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,9 +14,16 @@ import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.database.FirebaseListOptions;
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class ActivityReportesCalles extends AppCompatActivity {
@@ -75,6 +84,7 @@ public class ActivityReportesCalles extends AppCompatActivity {
             }
         };
         listaReporte.setAdapter(adapter); /*Una vez todos los valores se obtienen se lo aplican al listview que tenemos en la actividad */
+
     }
   @Override
 protected void onStart() { /*Metodos necesarios para que la funcion populateView pueda ser llamada y corra el llenado estando en la actividad, y cuando se salga pare con la función de igual manera*/
@@ -87,5 +97,10 @@ protected void onStart() { /*Metodos necesarios para que la funcion populateView
     protected void onStop() {
         super.onStop();
         adapter.stopListening();
+    }
+
+
+    public void generarReporte(View view){
+        startActivity(new Intent(getApplicationContext(), Pop.class));
     }
 }
