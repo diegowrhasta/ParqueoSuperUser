@@ -16,7 +16,7 @@
             android:id="@+id/calle"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:background="@drawable/ic_perfil" />
+            android:background="@drawable/alcaldia" />
 
         <TextView
             android:layout_width="56dp"

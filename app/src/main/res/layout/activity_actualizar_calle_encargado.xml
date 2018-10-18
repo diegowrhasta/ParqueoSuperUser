@@ -23,7 +23,7 @@
                 android:id="@+id/fotito"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
-                android:background="@drawable/ic_perfil" />
+                android:background="@drawable/alcaldia" />
 
 
             <TextView
@@ -103,13 +103,15 @@
 
         <Button
             android:id="@+id/button"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="registroNew"
             android:text="Registrar"
             android:textColor="@color/fui_bgGoogle"
             android:textStyle="bold"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorPrimary"
+            android:layout_gravity="center"
+            />
 
 
     </LinearLayout>

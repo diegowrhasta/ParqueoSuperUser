@@ -26,10 +26,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), ActivityReportesCalles.class));
     }
 
-    public void inicio_calles(View view) { //Lanza la actividad para ver las calles
-        startActivity(new Intent(getApplicationContext(), ActivityAsignacionCalles.class));
-    }
-
 
     public void lista_encargados(View view) { //Lanza la actividad para revisar el listado de encargados
         startActivity(new Intent(getApplicationContext(), ActivityListaEncargados.class));
