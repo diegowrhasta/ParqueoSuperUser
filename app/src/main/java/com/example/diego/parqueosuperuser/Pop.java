@@ -45,13 +45,10 @@ public class Pop extends AppCompatActivity {
                     Estados value = dataSnapshot1.getValue(Estados.class);
                     if(value.getEstado().equals("Libre")){
                         libres++;
-                        Log.e("Libres",""+libres);
                     }else if(value.getEstado().equals("Reservado")){
                         reservados++;
-                        Log.e("Reservados",""+reservados);
                     }else if(value.getEstado().equals("Ocupado")){
                         ocupados++;
-                        Log.e("Ocupados",""+ocupados);
                     }
                 }
                 pieChart = (PieChart) findViewById(R.id.pieChart);

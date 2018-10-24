@@ -82,7 +82,7 @@ public class ActivityListaEncargados extends AppCompatActivity implements Search
                                                          intent.putExtra("nombre",selectedProduct.getNombre());
                                                          intent.putExtra("sector",selectedProduct.getSector());
                                                          intent.putExtra("calle_actual", selectedProduct.getCalle_activa());
-                                                         intent.putExtra("id", selectedProduct.getId());
+                                                         intent.putExtra("id", selectedProduct.getCarnet());
 
 
                                                          startActivity(intent);

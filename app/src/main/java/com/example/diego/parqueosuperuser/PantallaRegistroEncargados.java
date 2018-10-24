@@ -80,6 +80,7 @@ public class PantallaRegistroEncargados extends AppCompatActivity {
                                 myRef.child("calle_activa").setValue("0");//Por defecto los encargados tendrán una calle 0 asignada para expresar que no están asignados a ninguna calle
                                 myRef.child("correo").setValue(email);
                                 myRef.child("password").setValue(password);
+                                myRef.child("carnet").setValue(carnet);
                                 myRef.child("sector").setValue("0");
         }
         Toast.makeText(this, "Encargado Agregado con éxito", Toast.LENGTH_SHORT).show();

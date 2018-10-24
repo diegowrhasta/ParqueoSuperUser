@@ -91,7 +91,7 @@ public class ListaArtista extends BaseAdapter {
         // Set the results into TextViews
         holder.name.setText("Nombre: "+artistaList.get(position).getNombre());
         holder.calle.setText("Calle asignada: "+artistaList.get(position).getCalle_activa());
-        holder.sector1.setText("Soy wapo");
+        holder.sector1.setText("Sector: "+artistaList.get(position).getSector());
         holder.telefono1.setText("Telefono: "+artistaList.get(position).getTelefono());
 
 
