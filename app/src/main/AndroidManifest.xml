@@ -19,7 +19,6 @@
         </activity>
         <activity android:name=".PantallaRegistroEncargados" />
         <activity android:name=".ActivityReportesCalles" />
-        <activity android:name=".ActivityAsignacionCalles" />
         <activity android:name=".ActivityListaEncargados"/>
         <activity android:name=".ActualizarCalleEncargado"/>
         <activity android:name=".Pop">
