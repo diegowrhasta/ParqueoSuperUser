@@ -73,47 +73,14 @@ public class PantallaRegistroEncargados extends AppCompatActivity {
         }
         /*Toma los strings obtenidos de los Edit Text y luego los coloca acorde a la estructura del objeto, el carnet servira como Key */
         else {
-            firebaseAuth.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-
-                            if(task.isSuccessful()){
-
-
-                                myRef = FirebaseDatabase.getInstance().getReference("Cliente").child(firebaseAuth.getUid()).child("Usuario");
+                                myRef = FirebaseDatabase.getInstance().getReference("Encargado").child(carnet);
                                 myRef.child("nombre").setValue(nombre);
                                 myRef.child("fecha_nac").setValue(fecha_nac);
                                 myRef.child("telefono").setValue(telefono);
-                                myRef.child("calle_activa").setValue("0");
-                                myRef.child("carnet").setValue(carnet+"");//Por defecto los encargados tendrán una calle 0 asignada para expresar que no están asignados a ninguna calle
+                                myRef.child("calle_activa").setValue("0");//Por defecto los encargados tendrán una calle 0 asignada para expresar que no están asignados a ninguna calle
                                 myRef.child("correo").setValue(email);
                                 myRef.child("password").setValue(password);
-                                myRef.child("tipo").setValue("UsuarioEncargado");
                                 myRef.child("sector").setValue("0");
-                                myRef.child("id").setValue(firebaseAuth.getUid());
-
-                                otroBDD = FirebaseDatabase.getInstance().getReference("Encargado").child(firebaseAuth.getUid());
-                                otroBDD.child("nombre").setValue(nombre);
-                                otroBDD.child("fecha_nac").setValue(fecha_nac);
-                                otroBDD.child("telefono").setValue(telefono);
-                                otroBDD.child("calle_activa").setValue("0");
-                                otroBDD.child("carnet").setValue(carnet+"");//Por defecto los encargados tendrán una calle 0 asignada para expresar que no están asignados a ninguna calle
-                                otroBDD.child("correo").setValue(email);
-                                otroBDD.child("sector").setValue("0");
-                                otroBDD.child("id").setValue(firebaseAuth.getUid());
-
-
-                                //se ingresan firebaseAuth.getUid() datos del usuario en la base
-
-                            }else{
-
-                                  Toast.makeText(PantallaRegistroEncargados.this,"Ya existe una cuenta con ese correo o la contraseña es muy corta",Toast.LENGTH_LONG).show();
-                            }
-                            progressDialog.dismiss();
-                        }
-                    });
-
         }
         Toast.makeText(this, "Encargado Agregado con éxito", Toast.LENGTH_SHORT).show();
         // Reset de los campos una vez registrado el encargado
